@@ -3,11 +3,11 @@ import psycopg2
 import csv
 
 conn = psycopg2.connect(host="localhost", database="north", user="postgres", password="1479")
+tables = ['customers_data.csv', 'employees_data.csv', 'orders_data.csv']
 
 try:
     with conn:
         with conn.cursor() as cur:
-            tables = ['customers_data.csv', 'employees_data.csv', 'orders_data.csv']
 
             for table in tables:
                 path = 'north_data/' + table
